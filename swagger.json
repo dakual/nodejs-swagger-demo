@@ -1,0 +1,48 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a simple example NodeJS API project to demonstrate Swagger Documentation",
+    "version": "1.0.0",
+    "title": "Products API",
+    "contact": {
+      "email": "abc@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "schemes": ["http","https"],
+  "host": "localhost:8080",
+  "produces": [
+    "application/json", 
+    "application/xml"
+  ],
+  "securityDefinitions": {
+    "JWT": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization",
+      "description": "Basic apiKey authorization"
+    }
+  },
+  "basePath": "/api",
+  "paths" : {
+    "/products" : {
+      "get" : {
+        "summary" : "Get all the products",
+        "description": "Get all the products from database",
+        "produces": ["application/json"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          },
+          "400": {
+            "description": "Data not found"
+          }
+        }
+      }
+    }
+  }
+}
